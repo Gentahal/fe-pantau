@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, PT_Sans } from "next/font/google";
+import localFont from "next/font/local";  
 import "./globals.css";
+import Sidebar from "@/components/Sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +13,25 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// const myFont = localFont({
+//   src: [
+//     {
+//       path: 'public/fonts/Product-Sans-Bold-Italic.ttf',
+//     },
+//     {
+//       path: 'public/fonts/Product-Sans-Bold.ttf',
+//     },
+//     {
+//       path: 'public/fonts/Product-Sans-Italic.ttf',
+//     },
+//     {
+//       path: 'public/fonts/Product-Sans-Regular.ttf',
+//     }
+//   ],
+// });
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
