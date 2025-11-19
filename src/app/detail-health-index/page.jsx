@@ -92,6 +92,10 @@ export default function HealthIndexPage() {
                         </button>
                     </div>
                 </div>
+                {/* Footer "DESIGN BY PANTAU Team" */}
+                <div className="absolute bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
+                    *DESIGN BY PANTAU Team
+                </div>
             </main>
         </div>
     );
