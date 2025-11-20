@@ -167,6 +167,7 @@ export default function DashboardPage() {
         {/* Footer */}
         <footer className="mt-10 text-center text-sm text-gray-500">
           © Design By PANTAU Team
+          {/* ini tes */}
         </footer>
       </main>
     </div>
