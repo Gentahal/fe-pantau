@@ -38,7 +38,7 @@ export default function DashboardPage() {
       <Sidebar />
 
       {/* Content */}
-      <main className="flex-1 lg:ml-64 p-4 lg:p-6">
+      <main className="flex-1 lg:ml-64 p-6 mb-8">
         {/* Header */}
         <div className="mb-6 lg:mb-8 mt-16 lg:mt-0">
           <h1 className="text-xl lg:text-3xl font-semibold text-gray-900">
@@ -53,47 +53,43 @@ export default function DashboardPage() {
         {/* Charts Container */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
           {/* Bar Chart */}
-          <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border">
-            <h2 className="font-semibold mb-4 text-gray-800 text-base lg:text-lg">
+          <div className="bg-white p-4 rounded-xl border-1 border-gray-200 lg:p-6">
+            <h2 className="font-semibold mb-4 text-gray-800 text-lg">
               Peserta Terancam Penonaktifan
             </h2>
 
             <div className="w-full h-[250px] lg:h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart 
+                <BarChart
                   data={barData}
                   margin={{ top: 20, right: 10, left: 0, bottom: 40 }}
                 >
-                  <XAxis 
-                    dataKey="name" 
+                  <XAxis
+                    dataKey="name"
                     angle={-45}
                     textAnchor="end"
                     height={60}
                     fontSize={10}
                     interval={0}
                   />
-                  <YAxis fontSize={10} />
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: 'white',
-                      border: '1px solid #e5e7eb',
-                      borderRadius: '8px',
-                      fontSize: '12px'
+                  <YAxis fontSize={12} />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "white",
+                      border: "1px solid #e5e7eb",
+                      borderRadius: "8px",
+                      fontSize: "12px",
                     }}
                   />
-                  <Bar 
-                    dataKey="value" 
-                    fill="#4CAF50" 
-                    radius={[4, 4, 0, 0]}
-                  />
+                  <Bar dataKey="value" fill="#2E7D32" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
           </div>
 
           {/* Pie Chart */}
-          <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border">
-            <h2 className="font-semibold mb-4 text-gray-800 text-base lg:text-lg">
+          <div className="bg-white p-4 rounded-xl border-1 border-gray-200 lg:p-6">
+            <h2 className="font-semibold mb-4 text-gray-800 text-lg">
               Kategori Indeks Aksesibilitas
             </h2>
 
@@ -110,18 +106,18 @@ export default function DashboardPage() {
                     dataKey="value"
                   >
                     {pieData.map((entry, index) => (
-                      <Cell 
-                        key={`cell-${index}`} 
-                        fill={COLORS[index % COLORS.length]} 
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS[index % COLORS.length]}
                       />
                     ))}
                   </Pie>
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: 'white',
-                      border: '1px solid #e5e7eb',
-                      borderRadius: '8px',
-                      fontSize: '12px'
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "white",
+                      border: "1px solid #e5e7eb",
+                      borderRadius: "8px",
+                      fontSize: "12px",
                     }}
                   />
                 </PieChart>
@@ -131,9 +127,9 @@ export default function DashboardPage() {
             {/* Legend */}
             <div className="flex flex-wrap justify-center gap-3 lg:gap-4 mt-4 text-xs">
               {pieData.map((entry, index) => (
-                <div key={entry.name} className="flex items-center gap-1 lg:gap-2">
-                  <span 
-                    className="w-2 h-2 lg:w-3 lg:h-3 rounded-full flex-shrink-0"
+                <div key={entry.name} className="flex items-center gap-2">
+                  <span
+                    className="w-3 h-3 rounded-full"
                     style={{ backgroundColor: COLORS[index] }}
                   ></span>
                   <span className="text-gray-700 text-xs lg:text-sm">{entry.name}</span>
@@ -144,31 +140,10 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Additional Stats Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-6 lg:mt-8">
-          <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border">
-            <h3 className="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Total Peserta</h3>
-            <p className="text-xl lg:text-2xl font-bold text-green-600">1,234</p>
-            <p className="text-xs lg:text-sm text-gray-500">Aktif</p>
-          </div>
-          
-          <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border">
-            <h3 className="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Terancam Nonaktif</h3>
-            <p className="text-xl lg:text-2xl font-bold text-orange-600">56</p>
-            <p className="text-xs lg:text-sm text-gray-500">Peserta</p>
-          </div>
-          
-          <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border">
-            <h3 className="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Rata-rata Indeks</h3>
-            <p className="text-xl lg:text-2xl font-bold text-blue-600">72.5</p>
-            <p className="text-xs lg:text-sm text-gray-500">Skor aksesibilitas</p>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <footer className="mt-8 lg:mt-10 text-center text-xs lg:text-sm text-gray-500">
+        {/* Footer "DESIGN BY PANTAU Team" */}
+        <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
           © Design By PANTAU Team
-        </footer>
+        </div>
       </main>
     </div>
   );

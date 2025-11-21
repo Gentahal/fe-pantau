@@ -202,7 +202,7 @@ export default function HealthIndexPage() {
       {/* Sidebar - Pastikan styling di dalamnya cocok dengan gambar kedua */}
       <Sidebar currentPage="Beranda" />
 
-      <main className="flex-1 lg:ml-64 p-6 space-y-6">
+      <main className="flex-1 lg:ml-64 p-6 space-y-6 mb-8">
         <h2 className="text-2xl font-bold text-gray-800">
           Daftar KK Target Kunjungan
         </h2>
@@ -210,11 +210,11 @@ export default function HealthIndexPage() {
         <LocationInfo />
 
         <KunjunganTable data={targetKunjunganData} />
-        {/* Footer "DESIGN BY PANTAU Team" */}
-        <div className="absolute bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
-          *DESIGN BY PANTAU Team
-        </div>
       </main>
+      {/* Footer "DESIGN BY PANTAU Team" */}
+                <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
+                    *DESIGN BY PANTAU Team
+                </div>
     </div>
   );
 }
