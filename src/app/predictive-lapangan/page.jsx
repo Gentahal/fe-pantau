@@ -144,7 +144,7 @@ export default function HealthIndexPage() {
       {/* Sidebar - Asumsi komponen ini sudah menangani navigasi dan tata letak kiri */}
       <Sidebar />
       
-      <main className="flex-1 lg:ml-64 p-6 space-y-8"> 
+      <main className="flex-1 lg:ml-64 p-6 space-y-8 mb-8"> 
         {/* Konten Halaman Admin */}
         
         {/* Mengubah Beranda menjadi aktif dengan mengubah style pada Sidebar (asumsi) */}
