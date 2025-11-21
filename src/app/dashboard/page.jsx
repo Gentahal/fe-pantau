@@ -1,6 +1,7 @@
 "use client";
 
 import Sidebar from "@/components/Sidebar";
+Breadcrumb
 import {
   BarChart,
   Bar,
@@ -12,6 +13,7 @@ import {
   Pie,
   Cell,
 } from "recharts";
+import Breadcrumb from "../../components/Breadcrumb";
 
 export default function DashboardPage() {
   // Data grafik bar
@@ -39,6 +41,7 @@ export default function DashboardPage() {
 
       {/* Content */}
       <main className="flex-1 lg:ml-64 p-6 mb-8">
+        <Breadcrumb homeText="Beranda" isDashboard={true}/>
         {/* Header */}
         <div className="mb-6 lg:mb-8 mt-16 lg:mt-0">
           <h1 className="text-xl lg:text-3xl font-semibold text-gray-900">

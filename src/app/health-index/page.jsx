@@ -1,6 +1,7 @@
 "use client";
 
 import CardStat from "@/components/CardStat";
+Breadcrumb
 import {
   ChartBarIcon,
   BuildingOfficeIcon,
@@ -18,6 +19,7 @@ import {
   Pie,
   Cell,
 } from "recharts";
+import Breadcrumb from "../../components/Breadcrumb";
 
 export default function HealthIndexPage() {
   // Data untuk tabel ranking
@@ -64,6 +66,7 @@ export default function HealthIndexPage() {
       <Sidebar />
 
       <main className="flex-1 lg:ml-64 p-6 space-y-6 mb-8">
+        <Breadcrumb homeText="Health Accessibility Index" isDashboard={true}/>
         {/* Filter Section */}
         <div className="">
           <h2 className="text-xl font-bold mb-6 text-gray-800">

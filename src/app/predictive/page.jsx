@@ -1,6 +1,7 @@
 "use client";
 
 import Sidebar from "@/components/Sidebar";
+Breadcrumb
 import {
   BarChart,
   Bar,
@@ -12,6 +13,7 @@ import {
   Pie,
   Cell,
 } from "recharts";
+import Breadcrumb from "../../components/Breadcrumb";
 
 // Data untuk Tabel (diletakkan di luar komponen atau di file terpisah jika perlu)
 const dataWilayahBeresiko = [
@@ -162,10 +164,10 @@ const dataWilayahBeresiko = [
   },
 ];
 
-  const barData = [
-    { name: "Peserta Aktif", value: 82.3 },
-    { name: "Peserta NonAktif", value: 17.7 },
-  ];
+const barData = [
+  { name: "Peserta Aktif", value: 82.3 },
+  { name: "Peserta NonAktif", value: 17.7 },
+];
 
 const pieData = [
   { name: "Rendah", value: 30 },
@@ -178,9 +180,10 @@ const COLORS = ["#6A9FF7", "#60D394", "#FFB64D"];
 export default function HealthIndexPage() {
   // Ganti nama jika file ini memang untuk Health Index
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 flex relative pb-16">
       <Sidebar />
-      <main className="flex-1 lg:ml-64 p-6 space-y-6 mb-8">
+      <main className="flex-1 space-y-6 pt-4 px-4 lg:pl-72 lg:pr-4 mb-8 min-w-0">
+        <Breadcrumb homeText="Ai Predictive" isDashboard="true"/>
         {/* === Filter Data Daerah === */}
         <div className="bg-white p-6 rounded-xl border-1 border-gray-200">
           <h2 className="text-xl font-bold mb-6 text-gray-800">
@@ -368,7 +371,10 @@ export default function HealthIndexPage() {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {dataWilayahBeresiko.map((row) => (
-                  <tr key={row.no} className="border-b border-gray-100 hover:bg-gray-50">
+                  <tr
+                    key={row.no}
+                    className="border-b border-gray-100 hover:bg-gray-50"
+                  >
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       {row.no}
                     </td>
@@ -384,7 +390,8 @@ export default function HealthIndexPage() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {row.desa}
                     </td>
-                    <td className={`px-6 py-4 whitespace-nowrap text-sm ${
+                    <td
+                      className={`px-6 py-4 whitespace-nowrap text-sm ${
                         row.prediksiNonAktif === "87%"
                           ? "text-red-500 font-bold"
                           : "text-gray-500"
@@ -403,9 +410,9 @@ export default function HealthIndexPage() {
         </div>
       </main>
       {/* Footer "DESIGN BY PANTAU Team" */}
-                <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
-                    © Design By PANTAU Team
-                </div>
+      <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
+        © Design By PANTAU Team
+      </div>
     </div>
   );
 }
