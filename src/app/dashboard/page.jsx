@@ -40,8 +40,8 @@ export default function DashboardPage() {
       {/* Content */}
       <main className="flex-1 lg:ml-64 p-6 mb-8">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-2xl lg:text-3xl font-semibold text-gray-900">
+        <div className="mb-6 lg:mb-8 mt-16 lg:mt-0">
+          <h1 className="text-xl lg:text-3xl font-semibold text-gray-900">
             Selamat Datang, Admin1!
           </h1>
           <p className="text-gray-600 mt-2 text-sm lg:text-base">
@@ -51,25 +51,26 @@ export default function DashboardPage() {
         </div>
 
         {/* Charts Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
           {/* Bar Chart */}
           <div className="bg-white p-4 rounded-xl border-1 border-gray-200 lg:p-6">
             <h2 className="font-semibold mb-4 text-gray-800 text-lg">
               Peserta Terancam Penonaktifan
             </h2>
 
-            <div className="w-full h-[300px]">
+            <div className="w-full h-[250px] lg:h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={barData}
-                  margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
+                  margin={{ top: 20, right: 10, left: 0, bottom: 40 }}
                 >
                   <XAxis
                     dataKey="name"
                     angle={-45}
                     textAnchor="end"
                     height={60}
-                    fontSize={12}
+                    fontSize={10}
+                    interval={0}
                   />
                   <YAxis fontSize={12} />
                   <Tooltip
@@ -92,15 +93,15 @@ export default function DashboardPage() {
               Kategori Indeks Aksesibilitas
             </h2>
 
-            <div className="w-full h-[300px]">
+            <div className="w-full h-[250px] lg:h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
                     data={pieData}
                     cx="50%"
                     cy="50%"
-                    innerRadius={60}
-                    outerRadius={100}
+                    innerRadius={50}
+                    outerRadius={80}
                     paddingAngle={2}
                     dataKey="value"
                   >
@@ -124,15 +125,15 @@ export default function DashboardPage() {
             </div>
 
             {/* Legend */}
-            <div className="flex flex-wrap justify-center gap-4 mt-4 text-xs lg:text-sm">
+            <div className="flex flex-wrap justify-center gap-3 lg:gap-4 mt-4 text-xs">
               {pieData.map((entry, index) => (
                 <div key={entry.name} className="flex items-center gap-2">
                   <span
                     className="w-3 h-3 rounded-full"
                     style={{ backgroundColor: COLORS[index] }}
                   ></span>
-                  <span className="text-gray-700">{entry.name}</span>
-                  <span className="text-gray-500">({entry.value}%)</span>
+                  <span className="text-gray-700 text-xs lg:text-sm">{entry.name}</span>
+                  <span className="text-gray-500 text-xs lg:text-sm">({entry.value}%)</span>
                 </div>
               ))}
             </div>
