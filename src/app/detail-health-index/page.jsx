@@ -1,11 +1,15 @@
 import Sidebar from "@/components/Sidebar";
+Breadcrumb
 import { ChartBarIcon, BuildingOfficeIcon, SignalIcon } from "@heroicons/react/24/outline";
+import Breadcrumb from "../../components/Breadcrumb";
 export default function HealthIndexPage() {
     return (
         <div className="min-h-screen bg-gray-50 flex">
             <Sidebar />
 
-            <main className="flex-1 lg:ml-64 p-6 space-y-6">
+            <main className="flex-1 lg:ml-64 p-6 space-y-6 mb-8">
+                <Breadcrumb homeText="Health Accessibility Index" currentPageText="Detail Health Accessibility Index"
+                />
                 {/* Detail Health Accessibility Index */}
                 <section className="space-y-6">
                     {/* Header */}
@@ -83,7 +87,7 @@ export default function HealthIndexPage() {
                     </section>
 
 
-                    <div className="flex flex-col gap-4 lg:w-64">
+                    <div className="flex flex-col gap-4 w-full lg:w-64">
                         <button className="bg-[#2E7D32] hover:bg-green-700 text-white px-5 py-3 rounded-xl shadow w-full">
                             Lakukan Observasi
                         </button>
@@ -92,11 +96,11 @@ export default function HealthIndexPage() {
                         </button>
                     </div>
                 </div>
-                {/* Footer "DESIGN BY PANTAU Team" */}
-                <div className="absolute bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
-                    *DESIGN BY PANTAU Team
-                </div>
             </main>
+                {/* Footer "DESIGN BY PANTAU Team" */}
+      <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
+        © Design By PANTAU Team
+      </div>
         </div>
     );
 }

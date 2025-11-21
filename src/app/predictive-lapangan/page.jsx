@@ -1,4 +1,6 @@
 import Sidebar from "@/components/Sidebar";
+import Breadcrumb from "../../components/Breadcrumb";
+Breadcrumb
 
 // --- Data untuk Tabel ---
 const activeTasksData = [
@@ -145,6 +147,7 @@ export default function HealthIndexPage() {
       <Sidebar />
       
       <main className="flex-1 lg:ml-64 p-6 space-y-8 mb-8"> 
+        <Breadcrumb homeText="Ai Predictive" isDashboard={true}/>
         {/* Konten Halaman Admin */}
         
         {/* Mengubah Beranda menjadi aktif dengan mengubah style pada Sidebar (asumsi) */}
