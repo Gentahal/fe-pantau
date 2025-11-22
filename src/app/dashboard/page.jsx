@@ -16,7 +16,6 @@ import {
 import Breadcrumb from "../../components/Breadcrumb";
 
 export default function DashboardPage() {
-  // Data grafik bar
   const barData = [
     { name: "Jakarta", value: 56 },
     { name: "Jawa Barat", value: 64 },
@@ -26,7 +25,6 @@ export default function DashboardPage() {
     { name: "Bali", value: 37 },
   ];
 
-  // Data donut chart
   const pieData = [
     { name: "Rendah", value: 30 },
     { name: "Tinggi", value: 55 },
@@ -39,10 +37,8 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-gray-50 flex">
       <Sidebar />
 
-      {/* Content */}
       <main className="flex-1 lg:ml-64 p-6 mb-8">
         <Breadcrumb homeText="Beranda" isDashboard={true}/>
-        {/* Header */}
         <div className="mb-6 lg:mb-8 mt-16 lg:mt-0">
           <h1 className="text-xl lg:text-3xl font-semibold text-gray-900">
             Selamat Datang, Admin1!

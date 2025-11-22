@@ -12,7 +12,6 @@ export default function LoginPage() {
 
   const router = useRouter();
 
-  // 🟩 Auto redirect jika sudah login
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -30,10 +29,8 @@ export default function LoginPage() {
         password,
       });
 
-      // Simpan token
       localStorage.setItem("token", res.data.token);
 
-      // Pindah ke dashboard
       router.push("/dashboard");
     } catch (err) {
       console.error(err.response?.data);

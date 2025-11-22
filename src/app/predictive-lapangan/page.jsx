@@ -2,7 +2,6 @@ import Sidebar from "@/components/Sidebar";
 import Breadcrumb from "../../components/Breadcrumb";
 Breadcrumb
 
-// --- Data untuk Tabel ---
 const activeTasksData = [
   { no: 1, tugas: 'Sosialisasi', provinsi: 'Jawa Timur', kabupaten: 'Surabaya', kecamatan: '-', desa: 'Antapani', targetKK: 14, deadline: '12 November 2025' },
   { no: 2, tugas: 'Sosialisasi', provinsi: 'DKI Jakarta', kabupaten: 'Jakarta Selatan', kecamatan: '-', desa: 'Tenggilis', targetKK: 12, deadline: '12 November 2025' },
@@ -22,20 +21,14 @@ const completedVisitsData = [
   { no: 6, tugas: 'Sosialisasi', desa: 'Jayagiri', jumlahKK: 11, tanggalSelesai: '8 November 2025' },
   { no: 7, tugas: 'Sosialisasi', desa: 'Mekarjaya', jumlahKK: 16, tanggalSelesai: '8 November 2025' },
 ];
-// ------------------------------------
 
-
-// --- Komponen Kartu Ringkasan ---
 const SummaryCard = ({ title, value, isPrimary = false }) => (
   <div className={`p-4 rounded-lg shadow-sm ${isPrimary ? 'bg-white border border-gray-200' : 'bg-white'}`}>
     <p className="text-sm font-medium text-gray-500">{title}</p>
     <p className="text-2xl font-semibold text-gray-900 mt-1">{value}</p>
   </div>
 );
-// ------------------------------------
 
-
-// --- Komponen Tabel Tugas Aktif ---
 const ActiveTasksTable = ({ data }) => (
   <div>
     <h3 className="text-xl font-semibold text-gray-800 mb-4">Daftar Tugas Lapangan</h3>
@@ -101,10 +94,7 @@ const ActiveTasksTable = ({ data }) => (
     </div>
   </div>
 );
-// ------------------------------------
 
-
-// --- Komponen Tabel Riwayat Kunjungan Selesai ---
 const CompletedVisitsTable = ({ data }) => (
   <div >
     <h3 className="text-xl font-semibold text-gray-800 mb-4">Riwayat Kunjungan Selesai</h3>
@@ -136,10 +126,7 @@ const CompletedVisitsTable = ({ data }) => (
     </div>
   </div>
 );
-// ------------------------------------
 
-
-// --- Komponen Halaman Utama ---
 export default function HealthIndexPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex">
@@ -168,4 +155,3 @@ export default function HealthIndexPage() {
     
   );
 }
-// ------------------------------------

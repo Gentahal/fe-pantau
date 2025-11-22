@@ -15,7 +15,6 @@ import {
 } from "recharts";
 import Breadcrumb from "../../components/Breadcrumb";
 
-// Data untuk Tabel (diletakkan di luar komponen atau di file terpisah jika perlu)
 const dataWilayahBeresiko = [
   {
     no: 1,
@@ -178,7 +177,6 @@ const pieData = [
 const COLORS = ["#6A9FF7", "#60D394", "#FFB64D"];
 
 export default function HealthIndexPage() {
-  // Ganti nama jika file ini memang untuk Health Index
   return (
     <div className="min-h-screen bg-gray-50 flex relative pb-16">
       <Sidebar />
@@ -227,7 +225,6 @@ export default function HealthIndexPage() {
             </div>
           </div>
 
-          {/* === Informasi Daerah, Status Kepesertaan, Wilayah Tunggakan === */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Informasi Daerah */}
             <div className="bg-white p-4 rounded-xl border-1 border-gray-200 transition-all space-y-2">
@@ -249,8 +246,6 @@ export default function HealthIndexPage() {
               </button>
             </div>
 
-            {/* Status Kepesertaan Wilayah (Bar Chart Placeholder) */}
-            {/* Bar Chart */}
             <div className="bg-white p-4 rounded-xl border-1 border-gray-200 transition-all">
               <h2 className="font-semibold mb-4 text-gray-800 text-lg">
                 Peserta Terancam Penonaktifan

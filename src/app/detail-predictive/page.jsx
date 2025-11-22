@@ -2,7 +2,6 @@ import Sidebar from "@/components/Sidebar";
 import Breadcrumb from "../../components/Breadcrumb";
 
 export default function HealthIndexPage() {
-  // Data dummy untuk tabel
   const paymentData = [
     {
       no: 1,

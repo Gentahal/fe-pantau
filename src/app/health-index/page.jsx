@@ -22,7 +22,6 @@ import {
 import Breadcrumb from "../../components/Breadcrumb";
 
 export default function HealthIndexPage() {
-  // Data untuk tabel ranking
   const rankingData = [
     { no: 1, desa: "Bojongsani", indeks: 92.5 },
     { no: 2, desa: "Bojongsoang", indeks: 92.5 },
@@ -34,7 +33,6 @@ export default function HealthIndexPage() {
     { no: 8, desa: "Kapuas Hilir", indeks: 92.5 },
   ];
 
-  // Data untuk chart distribusi
   const distributionData = [
     { name: "Jakarta", value: 56 },
     { name: "Jawa Barat", value: 64 },
@@ -43,7 +41,7 @@ export default function HealthIndexPage() {
     { name: "Papua", value: 70 },
     { name: "Bali", value: 37 },
   ];
-  // Data grafik bar
+
   const barData = [
     { name: "Jakarta", value: 56 },
     { name: "Jawa Barat", value: 64 },
@@ -53,7 +51,6 @@ export default function HealthIndexPage() {
     { name: "Bali", value: 37 },
   ];
 
-  // Data donut chart
   const pieData = [
     { name: "Rendah", value: 30 },
     { name: "Tinggi", value: 55 },
@@ -76,7 +73,6 @@ export default function HealthIndexPage() {
           {/* Grid Utama: Menggabungkan Dropdown dan Tombol dalam satu grid */}
           <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4 items-end">
             {/* Kolom Dropdown (3 Kolom) */}
-            {/* Menggunakan div terpisah untuk menambahkan label di atas dropdown */}
 
             {/* Dropdown Provinsi */}
             <div className="flex flex-col space-y-2">
@@ -200,9 +196,9 @@ export default function HealthIndexPage() {
           <div className="bg-white p-6 rounded-xl border-1 border-gray-200 flex flex-col items-center">
             <div className="w-full flex justify-center py-4">
               <img
-                src="/images/kdpdt.png" // Menggunakan URL gambar Anda
+                src="/images/kdpdt.png" 
                 alt="Logo Kementerian/Daerah"
-                className="max-w-xs w-4/5 h-auto mx-auto" // Styling agar responsif dan terpusat
+                className="max-w-xs w-4/5 h-auto mx-auto" 
               />
             </div>
 

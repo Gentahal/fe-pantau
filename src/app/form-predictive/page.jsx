@@ -12,7 +12,6 @@ export default function HealthIndexPage() {
                         Observasi Data
                     </h2>
 
-                    {/* GRID - Desktop tetap 2 kolom | Mobile jadi 1 kolom */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                         {/* LEFT COLUMN */}
@@ -83,10 +82,8 @@ export default function HealthIndexPage() {
                                     Target Kartu Keluarga
                                 </label>
 
-                                {/* Mobile: turun kebawah | Desktop: sejajar */}
                                 <div className="flex flex-col sm:flex-row sm:items-center gap-3">
 
-                                    {/* AUTO VALUE - BUKAN INPUT USER */}
                                     <div className="w-full sm:w-24 bg-gray-100 border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-900 text-center">
                                         12
                                     </div>

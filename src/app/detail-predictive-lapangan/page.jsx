@@ -1,10 +1,9 @@
-"use client"; // <--- INI PENTING! Menandai komponen ini sebagai Client Component
+"use client"; 
 
-import React, { useState } from "react"; // Import useState
+import React, { useState } from "react"; 
 import Sidebar from "@/components/Sidebar";
 import Breadcrumb from "../../components/Breadcrumb";
 
-// Data untuk tabel
 const targetKunjunganData = [
   {
     no: 1,
@@ -71,7 +70,6 @@ const targetKunjunganData = [
   },
 ];
 
-// Komponen untuk badge (seperti Status Kunjungan dan Hasil Sosialisasi)
 const Badge = ({ children, type }) => {
   let bgColor = "";
   if (type === "success") {
@@ -91,7 +89,6 @@ const Badge = ({ children, type }) => {
   );
 };
 
-// Komponen untuk bagian Informasi Lokasi
 const LocationInfo = () => (
   <div className="p-4 bg-white shadow rounded-lg w-full max-w-lg">
     {/* Baris Provinsi */}
@@ -124,14 +121,10 @@ const LocationInfo = () => (
   </div>
 );
 
-// --- START: Komponen Modal Form Laporan ---
 const ModalBuatLaporan = ({ isVisible, onClose }) => {
-  // Hanya tampilkan modal jika isVisible adalah true
   if (!isVisible) return null;
 
-  // Handler untuk menutup modal ketika mengklik di luar area modal
   const handleBackdropClick = (e) => {
-    // Pastikan klik dilakukan pada backdrop (div paling luar)
     if (e.target.id === "modal-backdrop") {
       onClose();
     }
@@ -302,7 +295,7 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
             <button
               type="button"
               className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-700 text-base font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm transition duration-150"
-              onClick={onClose} // Tombol Simpan (contoh: tutup modal setelah submit)
+              onClick={onClose} 
             >
               Simpan
             </button>
@@ -312,9 +305,7 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
     </div>
   );
 };
-// --- END: Komponen Modal Form Laporan ---
 
-// Komponen untuk Tabel Target Kunjungan
 const KunjunganTable = ({ data, onBuatLaporanClick }) => (
   <div className="bg-white shadow overflow-x-auto sm:rounded-lg">
     <table className="min-w-full divide-y divide-gray-200">
@@ -385,7 +376,7 @@ const KunjunganTable = ({ data, onBuatLaporanClick }) => (
             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
               <button
                 className="bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-3 rounded text-xs transition duration-150 ease-in-out"
-                onClick={() => onBuatLaporanClick(row)} // Memicu fungsi di Parent Component
+                onClick={() => onBuatLaporanClick(row)} 
               >
                 Buat Laporan
               </button>
@@ -398,7 +389,6 @@ const KunjunganTable = ({ data, onBuatLaporanClick }) => (
 );
 
 export default function HealthIndexPage() {
-  // Mengaktifkan state untuk mengontrol modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedKunjungan, setSelectedKunjungan] = useState(null);
 
@@ -430,14 +420,12 @@ export default function HealthIndexPage() {
 
         <LocationInfo />
 
-        {/* Meneruskan handler ke KunjunganTable */}
         <KunjunganTable
           data={targetKunjunganData}
           onBuatLaporanClick={handleOpenModal}
         />
       </main>
 
-      {/* Modal - Diposisikan di akhir DOM untuk overlay yang benar */}
       <ModalBuatLaporan
         isVisible={isModalOpen}
         onClose={handleCloseModal}
