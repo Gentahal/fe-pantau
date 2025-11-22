@@ -129,8 +129,9 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
   return (
     <div
       id="modal-backdrop"
-      className="fixed inset-0 z-50 bg-gray-900 bg-opacity-50 flex justify-center items-center p-4 transition-opacity duration-300"
-      onClick={handleBackdropClick}
+      
+      className="fixed inset-0 z-50 bg-gray-500/50 flex justify-center items-center p-4 transition-opacity duration-300"
+      // onClick={handleBackdropClick}
     >
       <div className="bg-white rounded-lg shadow-2xl max-w-3xl w-full mx-auto transform transition-transform duration-300 scale-100">
         <div className="p-6">
@@ -293,7 +294,7 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
 const KunjunganTable = ({ data, onBuatLaporanClick }) => (
   <div className="bg-white shadow overflow-x-auto sm:rounded-lg">
     <table className="min-w-full divide-y divide-gray-200">
-      <thead className="bg-gray-50">
+      <thead className="bg-white">
         <tr>
           {[
             "No",
@@ -308,7 +309,7 @@ const KunjunganTable = ({ data, onBuatLaporanClick }) => (
             <th
               key={header}
               scope="col"
-              className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
+              className="px-6 pt-6 pb-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
             >
               {header}
             </th>
@@ -414,7 +415,7 @@ export default function HealthIndexPage() {
         kunjunganData={selectedKunjungan}
       />
 
-      <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white py-2 text-center text-md z-40">
+      <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
         © Design By PANTAU Team
       </div>
     </div>

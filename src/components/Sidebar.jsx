@@ -28,13 +28,13 @@ export default function Sidebar() {
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          className="fixed inset-0 bg-gray-400/50  z-40 lg:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-50 p-2 bg-white rounded-md shadow-lg lg:hidden"
+        className="fixed top-8 left-4 z-50 p-2 bg-white rounded-md shadow-lg lg:hidden"
       >
         {isOpen ? (
           <XMarkIcon className="w-6 h-6 text-gray-700" />
@@ -45,7 +45,7 @@ export default function Sidebar() {
 
       <div
         className={`
-        w-64 bg-white border-r flex flex-col justify-between h-screen p-6 fixed left-0 top-0 overflow-y-auto z-40
+        w-64 bg-white border-r border-gray-300 flex flex-col justify-between h-screen p-6 fixed left-0 top-0 overflow-y-auto z-40
         transition-transform duration-300 ease-in-out
         ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
       `}
@@ -96,7 +96,7 @@ export default function Sidebar() {
             </div>
           </div>
         </div>
-        <div className="border-t pt-6">
+        <div className="border-t  border-gray-300 pt-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-green-500 rounded-full flex-shrink-0"></div>
             <div className="flex-1 min-w-0">
