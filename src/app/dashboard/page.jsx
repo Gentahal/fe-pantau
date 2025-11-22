@@ -1,7 +1,7 @@
 "use client";
 
 import Sidebar from "@/components/Sidebar";
-Breadcrumb
+Breadcrumb;
 import {
   BarChart,
   Bar,
@@ -38,7 +38,7 @@ export default function DashboardPage() {
       <Sidebar />
 
       <main className="flex-1 lg:ml-64 p-6 mb-8">
-        <Breadcrumb homeText="Beranda" isDashboard={true}/>
+        <Breadcrumb homeText="Beranda" isDashboard={true} />
         <div className="mb-6 lg:mb-8 mt-16 lg:mt-0">
           <h1 className="text-xl lg:text-3xl font-semibold text-gray-900">
             Selamat Datang, Admin1!
@@ -48,10 +48,7 @@ export default function DashboardPage() {
             termotivasi dan lacak kemajuan Anda!
           </p>
         </div>
-
-        {/* Charts Container */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-          {/* Bar Chart */}
           <div className="bg-white p-4 rounded-xl border-1 border-gray-200 lg:p-6">
             <h2 className="font-semibold mb-4 text-gray-800 text-lg">
               Peserta Terancam Penonaktifan
@@ -85,8 +82,6 @@ export default function DashboardPage() {
               </ResponsiveContainer>
             </div>
           </div>
-
-          {/* Pie Chart */}
           <div className="bg-white p-4 rounded-xl border-1 border-gray-200 lg:p-6">
             <h2 className="font-semibold mb-4 text-gray-800 text-lg">
               Kategori Indeks Aksesibilitas
@@ -122,8 +117,6 @@ export default function DashboardPage() {
                 </PieChart>
               </ResponsiveContainer>
             </div>
-
-            {/* Legend */}
             <div className="flex flex-wrap justify-center gap-3 lg:gap-4 mt-4 text-xs">
               {pieData.map((entry, index) => (
                 <div key={entry.name} className="flex items-center gap-2">
@@ -131,15 +124,17 @@ export default function DashboardPage() {
                     className="w-3 h-3 rounded-full"
                     style={{ backgroundColor: COLORS[index] }}
                   ></span>
-                  <span className="text-gray-700 text-xs lg:text-sm">{entry.name}</span>
-                  <span className="text-gray-500 text-xs lg:text-sm">({entry.value}%)</span>
+                  <span className="text-gray-700 text-xs lg:text-sm">
+                    {entry.name}
+                  </span>
+                  <span className="text-gray-500 text-xs lg:text-sm">
+                    ({entry.value}%)
+                  </span>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
-        {/* Footer "DESIGN BY PANTAU Team" */}
         <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
           © Design By PANTAU Team
         </div>

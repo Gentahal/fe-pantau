@@ -1,7 +1,7 @@
 "use client";
 
 import Sidebar from "@/components/Sidebar";
-Breadcrumb
+Breadcrumb;
 import {
   BarChart,
   Bar,
@@ -181,8 +181,7 @@ export default function HealthIndexPage() {
     <div className="min-h-screen bg-gray-50 flex relative pb-16">
       <Sidebar />
       <main className="flex-1 space-y-6 pt-4 px-4 lg:pl-72 lg:pr-4 mb-8 min-w-0">
-        <Breadcrumb homeText="Ai Predictive" isDashboard="true"/>
-        {/* === Filter Data Daerah === */}
+        <Breadcrumb homeText="Ai Predictive" isDashboard="true" />
         <div className="bg-white p-6 rounded-xl border-1 border-gray-200">
           <h2 className="text-xl font-bold mb-6 text-gray-800">
             Filter Data Daerah
@@ -226,7 +225,6 @@ export default function HealthIndexPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Informasi Daerah */}
             <div className="bg-white p-4 rounded-xl border-1 border-gray-200 transition-all space-y-2">
               <h2 className="text-xl font-semibold mb-4">Informasi Daerah</h2>
               <div className="flex justify-between py-1">
@@ -278,9 +276,6 @@ export default function HealthIndexPage() {
                 </ResponsiveContainer>
               </div>
             </div>
-
-            {/* Wilayah Tunggakan Meningkat (Donut Chart Placeholder) */}
-            {/* Pie Chart */}
             <div className="bg-white p-4 rounded-xl border-1 border-gray-200 transition-all">
               <h2 className="text-xl font-semibold mb-2">
                 Wilayah Tunggakan Meningkat
@@ -320,7 +315,6 @@ export default function HealthIndexPage() {
                 </ResponsiveContainer>
               </div>
 
-              {/* Legend */}
               <div className="flex flex-wrap justify-center gap-4 mt-4 text-xs lg:text-sm">
                 {pieData.map((entry, index) => (
                   <div key={entry.name} className="flex items-center gap-2">
@@ -329,7 +323,6 @@ export default function HealthIndexPage() {
                       style={{ backgroundColor: COLORS[index] }}
                     ></span>
                     <span className="text-gray-700">{entry.name}</span>
-                    {/* <span className="text-gray-500">({entry.value}%)</span> */}
                   </div>
                 ))}
               </div>
@@ -337,7 +330,6 @@ export default function HealthIndexPage() {
           </div>
         </div>
 
-        {/* === Daftar Wilayah Beresiko Bulan Depan (Data Table) === */}
         <h2 className="text-xl font-semibold mb-4">
           Daftar Wilayah Beresiko Bulan Depan
         </h2>
@@ -404,7 +396,6 @@ export default function HealthIndexPage() {
           </div>
         </div>
       </main>
-      {/* Footer "DESIGN BY PANTAU Team" */}
       <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
         © Design By PANTAU Team
       </div>

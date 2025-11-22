@@ -6,15 +6,11 @@ export default function HealthIndexFormPage() {
             <Sidebar />
 
             <main className="flex-1 lg:ml-64 p-6 space-y-6">
-
-                {/* Langkah 1 */}
                 <div className="bg-white rounded-xl shadow p-6">
                     <h2 className="text-base font-semibold mb-2 text-gray-900">Pengerjaan Tugas (Langkah 1 dari 2)</h2>
                     <h3 className="text-sm font-medium text-gray-900 mb-6">Langkah 1 : Survei Lapangan</h3>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-
-                        {/* kolom kiri */}
                         <div className="space-y-4">
 
                             <div>
@@ -75,8 +71,6 @@ export default function HealthIndexFormPage() {
                             </div>
 
                         </div>
-
-                        {/* kolom kanan */}
                         <div className="space-y-4">
 
                             <div>
@@ -145,7 +139,6 @@ export default function HealthIndexFormPage() {
 
                 </div>
 
-                {/* Langkah 2 */}
                 <div className="bg-white rounded-xl shadow p-6">
                     <h2 className="text-base font-semibold mb-2 text-gray-900">
                         Pengerjaan Tugas (Langkah 2 dari 2)
@@ -155,8 +148,6 @@ export default function HealthIndexFormPage() {
                     </h3>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-                        {/* kolom kiri */}
                         <div className="space-y-6">
 
                             <div>
@@ -206,8 +197,6 @@ export default function HealthIndexFormPage() {
                                 />
                             </div>
                         </div>
-
-                        {/* kolom kanan */}
                         <div>
                             <label className="text-xs font-medium text-gray-900 mb-1 block">
                                 Konfirmasi Rekrutmen Tenaga Medis

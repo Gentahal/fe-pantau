@@ -32,12 +32,10 @@ const SummaryCard = ({ title, value, isPrimary = false }) => (
 const ActiveTasksTable = ({ data }) => (
   <div>
     <h3 className="text-xl font-semibold text-gray-800 mb-4">Daftar Tugas Lapangan</h3>
-    
-    {/* Ringkasan & Filter */}
     <div className="flex items-center justify-between mb-4">
       <div className="grid grid-cols-3 gap-4 w-full max-w-xl">
         <SummaryCard title="Total Tugas Aktif" value={data.length} isPrimary={true} />
-        <SummaryCard title="Selesai Minggu Ini" value="0" isPrimary={true} /> {/* Data ini harusnya dinamis */}
+        <SummaryCard title="Selesai Minggu Ini" value="0" isPrimary={true} />
       </div>
     </div>
     
@@ -54,8 +52,6 @@ const ActiveTasksTable = ({ data }) => (
             <option>Semua Tugas</option>
         </select>
     </div>
-
-    {/* Tabel */}
     <div className="overflow-x-auto">
       <table className="min-w-full">
         <thead className="bg-white">
@@ -98,8 +94,6 @@ const ActiveTasksTable = ({ data }) => (
 const CompletedVisitsTable = ({ data }) => (
   <div >
     <h3 className="text-xl font-semibold text-gray-800 mb-4">Riwayat Kunjungan Selesai</h3>
-    
-    {/* Tabel */}
     <div className="overflow-x-auto">
       <table className="min-w-full ">
         <thead className="bg-white ">
@@ -130,24 +124,15 @@ const CompletedVisitsTable = ({ data }) => (
 export default function HealthIndexPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      {/* Sidebar - Asumsi komponen ini sudah menangani navigasi dan tata letak kiri */}
       <Sidebar />
       
       <main className="flex-1 lg:ml-64 p-6 space-y-8 mb-8"> 
         <Breadcrumb homeText="Ai Predictive" isDashboard={true}/>
-        {/* Konten Halaman Admin */}
-        
-        {/* Mengubah Beranda menjadi aktif dengan mengubah style pada Sidebar (asumsi) */}
-        
-        {/* Daftar Tugas Lapangan */}
         <ActiveTasksTable data={activeTasksData} />
-        
-        {/* Riwayat Kunjungan Selesai */}
         <CompletedVisitsTable data={completedVisitsData} />
 
         
       </main>
-      {/* Footer "DESIGN BY PANTAU Team" */}
                 <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
                     *DESIGN BY PANTAU Team
                 </div>

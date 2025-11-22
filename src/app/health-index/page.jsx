@@ -1,7 +1,7 @@
 "use client";
 
 import CardStat from "@/components/CardStat";
-Breadcrumb
+Breadcrumb;
 import {
   ChartBarIcon,
   BuildingOfficeIcon,
@@ -63,18 +63,12 @@ export default function HealthIndexPage() {
       <Sidebar />
 
       <main className="flex-1 lg:ml-64 p-6 space-y-6 mb-8">
-        <Breadcrumb homeText="Health Accessibility Index" isDashboard={true}/>
-        {/* Filter Section */}
+        <Breadcrumb homeText="Health Accessibility Index" isDashboard={true} />
         <div className="">
           <h2 className="text-xl font-bold mb-6 text-gray-800">
             Filter Data Daerah
           </h2>
-
-          {/* Grid Utama: Menggabungkan Dropdown dan Tombol dalam satu grid */}
           <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4 items-end">
-            {/* Kolom Dropdown (3 Kolom) */}
-
-            {/* Dropdown Provinsi */}
             <div className="flex flex-col space-y-2">
               <label className="text-sm font-semibold text-gray-700">
                 Provinsi
@@ -83,8 +77,6 @@ export default function HealthIndexPage() {
                 <option>Pilih Provinsi</option>
               </select>
             </div>
-
-            {/* Dropdown Kota */}
             <div className="flex flex-col space-y-2">
               <label className="text-sm font-semibold text-gray-700">
                 Kota
@@ -93,8 +85,6 @@ export default function HealthIndexPage() {
                 <option>Pilih Kota</option>
               </select>
             </div>
-
-            {/* Dropdown Desa */}
             <div className="flex flex-col space-y-2">
               <label className="text-sm font-semibold text-gray-700">
                 Desa
@@ -113,8 +103,6 @@ export default function HealthIndexPage() {
             </div>
           </div>
         </div>
-
-        {/* Statistics Grid */}
         <h2 className="text-xl font-bold mb-6 text-gray-800">
           Satuan Data Daerah
         </h2>
@@ -140,9 +128,7 @@ export default function HealthIndexPage() {
           />
         </div>
 
-        {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Ranking Table */}
           <div className="bg-white p-6 rounded-xl border-1 border-gray-200 lg:col-span-2">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
               <h2 className="text-lg font-semibold text-gray-800">
@@ -152,8 +138,6 @@ export default function HealthIndexPage() {
                 Lihat Semua →
               </button>
             </div>
-
-            {/* Tabel Ranking */}
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
@@ -191,28 +175,22 @@ export default function HealthIndexPage() {
             </div>
           </div>
 
-          {/* Right Side Content */}
-          {/* Desa Info Card */}
           <div className="bg-white p-6 rounded-xl border-1 border-gray-200 flex flex-col items-center">
             <div className="w-full flex justify-center py-4">
               <img
-                src="/images/kdpdt.png" 
+                src="/images/kdpdt.png"
                 alt="Logo Kementerian/Daerah"
-                className="max-w-xs w-4/5 h-auto mx-auto" 
+                className="max-w-xs w-4/5 h-auto mx-auto"
               />
             </div>
 
             <h2 className="text-xl font-extrabold mb-8 text-gray-800 text-center">
               Desa Bojongsoang
             </h2>
-
-            {/* Grid untuk Dua Kartu Kecil - Mengganti gap-4 menjadi gap-3 untuk jarak yang lebih rapat */}
             <div className="grid grid-cols-2 gap-3 w-full">
-              {/* Card Total Fasilitas (Sisi Kiri) */}
               <div className="bg-white p-4 rounded-xl border-1 border-gray-200 hover:border-[#2E7D32] transition-all">
                 <div className="flex flex-col items-start space-y-2">
                   <div className="flex items-center justify-between w-full">
-                    {/* Nilai Fasilitas */}
                     <div className="text-2xl font-extrabold text-[#2E7D32]">
                       10
                     </div>
@@ -224,7 +202,6 @@ export default function HealthIndexPage() {
                 </div>
               </div>
 
-              {/* Card Indeks Aksesibilitas (Sisi Kanan) */}
               <div className="bg-white p-4 rounded-xl border-1 border-gray-200 hover:border-[#2E7D32] transition-all">
                 <div className="flex flex-col items-start space-y-2">
                   <div className="flex items-center justify-between w-full">
@@ -242,7 +219,6 @@ export default function HealthIndexPage() {
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Bar Chart */}
           <div className="bg-white p-4 rounded-xl border-1 border-gray-200 lg:p-6">
             <h2 className="font-semibold mb-4 text-gray-800 text-lg">
               Peserta Terancam Penonaktifan
@@ -276,7 +252,6 @@ export default function HealthIndexPage() {
             </div>
           </div>
 
-          {/* Pie Chart */}
           <div className="bg-white p-4 rounded-xl border-1 border-gray-200 lg:p-6">
             <h2 className="font-semibold mb-4 text-gray-800 text-lg">
               Kategori Indeks Aksesibilitas
@@ -313,7 +288,6 @@ export default function HealthIndexPage() {
               </ResponsiveContainer>
             </div>
 
-            {/* Legend */}
             <div className="flex flex-wrap justify-center gap-4 mt-4 text-xs lg:text-sm">
               {pieData.map((entry, index) => (
                 <div key={entry.name} className="flex items-center gap-2">
@@ -329,10 +303,9 @@ export default function HealthIndexPage() {
           </div>
         </div>
       </main>
-            {/* Footer "DESIGN BY PANTAU Team" */}
-                <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
-                    © Design By PANTAU Team
-                </div>
+      <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
+        © Design By PANTAU Team
+      </div>
     </div>
   );
 }

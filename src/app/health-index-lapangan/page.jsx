@@ -185,7 +185,6 @@ const ActiveTasksTable = ({ data }) => (
       </div>
     </div>
 
-    {/* Filter */}
     <div className="mb-4">
       <label
         htmlFor="filter"
@@ -205,7 +204,6 @@ const ActiveTasksTable = ({ data }) => (
       </select>
     </div>
 
-    {/* Tabel */}
     <div className="overflow-x-auto border-t border-gray-200">
       <table className="min-w-full">
         <thead className="bg-white">
@@ -285,7 +283,6 @@ const CompletedVisitsTable = ({ data }) => (
       Riwayat Kunjungan Selesai
     </h3>
 
-    {/* Tabel */}
     <div className="overflow-x-auto border-t border-gray-200">
       <table className="min-w-full">
         <thead className="bg-white">
@@ -361,7 +358,6 @@ export default function HealthIndexPage() {
 
         <CompletedVisitsTable data={completedVisitsData} />
       </main>
-      {/* Footer "DESIGN BY PANTAU Team" */}
       <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white  py-2 text-md">
         *DESIGN BY PANTAU Team
       </div>

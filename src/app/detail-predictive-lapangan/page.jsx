@@ -91,7 +91,6 @@ const Badge = ({ children, type }) => {
 
 const LocationInfo = () => (
   <div className="p-4 bg-white shadow rounded-lg w-full max-w-lg">
-    {/* Baris Provinsi */}
     <div className="flex justify-between pb-2">
       <span className="text-base font-medium text-gray-900 w-1/2">
         Provinsi
@@ -99,13 +98,11 @@ const LocationInfo = () => (
       <span className="text-base text-gray-800 w-1/2">Jawa Tengah</span>
     </div>
 
-    {/* Baris Kota */}
     <div className="flex justify-between pb-2">
       <span className="text-base font-medium text-gray-900 w-1/2">Kota</span>
       <span className="text-base text-gray-800 w-1/2">Bandung</span>
     </div>
 
-    {/* Baris Kecamatan */}
     <div className="flex justify-between pb-2">
       <span className="text-base font-medium text-gray-900 w-1/2">
         Kecamatan
@@ -113,7 +110,6 @@ const LocationInfo = () => (
       <span className="text-base text-gray-800 w-1/2">Antapani</span>
     </div>
 
-    {/* Baris Desa (Tanpa border-b) */}
     <div className="flex justify-between">
       <span className="text-base font-medium text-gray-900 w-1/2">Desa</span>
       <span className="text-base text-gray-800 w-1/2">Antapani Tengah</span>
@@ -138,12 +134,10 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
     >
       <div className="bg-white rounded-lg shadow-2xl max-w-3xl w-full mx-auto transform transition-transform duration-300 scale-100">
         <div className="p-6">
-          {/* Header Modal */}
           <div className="flex justify-between items-center pb-3 border-b border-gray-200">
             <h3 className="text-xl font-semibold text-gray-900">
               Daftar KK Target Kunjungan
             </h3>
-            {/* Tombol Close (X) */}
             <button
               className="text-gray-400 hover:text-gray-600 transition-colors"
               onClick={onClose}
@@ -166,12 +160,9 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
             </button>
           </div>
 
-          {/* Form Konten */}
           <div className="py-4 max-h-[80vh] overflow-y-auto">
             <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Kolom Kiri: Status Kunjungan, Hasil Sosialisasi, Waktu, Catatan */}
               <div className="space-y-4">
-                {/* Status Kunjungan */}
                 <div>
                   <label
                     htmlFor="statusKunjungan"
@@ -190,7 +181,6 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
                   </select>
                 </div>
 
-                {/* Hasil Sosialisasi */}
                 <div>
                   <label
                     htmlFor="hasilSosialisasi"
@@ -209,7 +199,6 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
                   </select>
                 </div>
 
-                {/* Waktu (Tanggal) */}
                 <div>
                   <label
                     htmlFor="waktu"
@@ -227,7 +216,6 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
                   </div>
                 </div>
 
-                {/* Catatan */}
                 <div>
                   <label
                     htmlFor="catatan"
@@ -244,7 +232,6 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
                 </div>
               </div>
 
-              {/* Kolom Kanan: Upload Bukti Pembayaran */}
               <div className="space-y-4">
                 <div>
                   <label
@@ -254,7 +241,6 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
                     Upload Bukti Pembayaran
                   </label>
                   <div className="relative mt-1 rounded-md shadow-sm">
-                    {/* Input file yang sebenarnya tersembunyi, di-trigger oleh ikon/div */}
                     <input
                       type="file"
                       className="absolute inset-0 opacity-0 cursor-pointer h-full w-full"
@@ -262,13 +248,12 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
                     />
 
                     <input
-                      type="text" // Input tampilan
+                      type="text"
                       id="buktiPembayaran"
                       className="block w-full pr-10 border-gray-300 focus:ring-green-500 focus:border-green-500 sm:text-sm rounded-md py-2 px-3 border"
                       placeholder="Pilih file..."
-                      readOnly // Hanya untuk tampilan, tidak bisa di-edit langsung
+                      readOnly
                     />
-                    {/* Ikon Upload */}
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                       <svg
                         className="h-5 w-5 text-gray-500"
@@ -290,7 +275,6 @@ const ModalBuatLaporan = ({ isVisible, onClose }) => {
             </form>
           </div>
 
-          {/* Footer Modal (Simpan Button) */}
           <div className="pt-4 flex justify-end">
             <button
               type="button"
@@ -404,7 +388,6 @@ export default function HealthIndexPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex relative pb-16">
-      {/* Sidebar */}
       <Sidebar currentPage="AI Predictive" />
 
       <main className="flex-1 space-y-6 pt-4 px-4 lg:pl-72 lg:pr-4 mb-8 min-w-0">
@@ -413,7 +396,6 @@ export default function HealthIndexPage() {
           currentPageText="Detail Ai Predictive"
         />
 
-        {/* Konten Utama */}
         <h2 className="text-2xl font-bold text-gray-800">
           Daftar KK Target Kunjungan
         </h2>
@@ -432,7 +414,6 @@ export default function HealthIndexPage() {
         kunjunganData={selectedKunjungan}
       />
 
-      {/* Footer "DESIGN BY PANTAU Team" */}
       <div className="fixed bottom-0 p-4 left-0 right-0 lg:ml-64 bg-[#58975B] text-white py-2 text-center text-md z-40">
         © Design By PANTAU Team
       </div>

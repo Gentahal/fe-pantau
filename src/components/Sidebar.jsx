@@ -20,22 +20,18 @@ export default function Sidebar() {
     window.location.href = "/login";
   };
 
-  // Close sidebar when route changes
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
   return (
     <>
-      {/* Mobile Overlay */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
-
-      {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed top-4 left-4 z-50 p-2 bg-white rounded-md shadow-lg lg:hidden"
@@ -47,25 +43,23 @@ export default function Sidebar() {
         )}
       </button>
 
-      {/* Sidebar */}
-      <div className={`
+      <div
+        className={`
         w-64 bg-white border-r flex flex-col justify-between h-screen p-6 fixed left-0 top-0 overflow-y-auto z-40
         transition-transform duration-300 ease-in-out
-        ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-      `}>
-        {/* Header */}
+        ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+      `}
+      >
         <div>
           <h1 className="text-2xl font-semibold mb-10 text-black mt-16 lg:mt-0">
             Halaman Admin
           </h1>
-
-          {/* Menu */}
           <div>
             <Link
               href="/dashboard"
               className={`flex items-center gap-3 px-4 py-3 rounded-md transition-colors ${
-                pathname === "/dashboard" 
-                  ? "bg-green-600 text-white" 
+                pathname === "/dashboard"
+                  ? "bg-green-600 text-white"
                   : "text-gray-700 hover:bg-green-50 hover:text-green-600"
               }`}
             >
@@ -79,8 +73,8 @@ export default function Sidebar() {
               <Link
                 href="/predictive"
                 className={`flex items-center gap-3 px-4 py-3 rounded-md transition-colors ${
-                  pathname === "/predictive" 
-                    ? "bg-green-600 text-white" 
+                  pathname === "/predictive"
+                    ? "bg-green-600 text-white"
                     : "text-gray-700 hover:bg-green-50 hover:text-green-600"
                 }`}
               >
@@ -91,8 +85,8 @@ export default function Sidebar() {
               <Link
                 href="/health-index"
                 className={`flex items-center gap-3 px-4 py-3 rounded-md transition-colors ${
-                  pathname === "/health-index" 
-                    ? "bg-green-600 text-white" 
+                  pathname === "/health-index"
+                    ? "bg-green-600 text-white"
                     : "text-gray-700 hover:bg-green-50 hover:text-green-600"
                 }`}
               >
@@ -102,8 +96,6 @@ export default function Sidebar() {
             </div>
           </div>
         </div>
-
-        {/* Bottom User Info */}
         <div className="border-t pt-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-green-500 rounded-full flex-shrink-0"></div>
